@@ -1,0 +1,20 @@
+# https://kubernetes.io/docs/concepts/services-networking/ingress/#tls
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: traefik-ingress
+  namespace: kube-system
+  annotations:
+        kubernetes.io/ingress.class: traefik-external
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`traefik.techchad2022.rocks`)
+      middlewares:
+      - name: traefik-dashboard-auth
+        namespace: kube-system
+      services:
+      - kind: TraefikService
+        name: api@internal
