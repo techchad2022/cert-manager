@@ -11,7 +11,7 @@ spec:
   entryPoints:
     - websecure
   tls:
-    secretName: local-techchad2022-rocks-production
+    secretName: local-techchad2022-rocks-staging
   routes:
     - kind: Rule
       match: Host(`traefik.example.com`)
