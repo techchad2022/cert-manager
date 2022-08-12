@@ -1,8 +1,0 @@
-# This is a yaml to create a namespace.
-# usage:
-# $ kubectl appyl -f namespace.yaml
-
-apiVersion: v1
-kind: Namespace
-metadata:
-  name:  traefik
