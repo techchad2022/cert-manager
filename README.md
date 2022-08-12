@@ -53,7 +53,15 @@ kubectl apply -f traefik/ingress.yml
 
 
 ## Installing Cert-Manager
-Install cert-manager.crds.yaml
+Add helm repository
+```bash
+helm repo add jetstack https://charts.jetstack.io
+```
+update helm chart repository cache.
+```bash
+helm repo update
+```
+Install ```CustomResourceDefinations ```
 ```bash
 kubectl apply -f cert-manager/cert-manager.crds.yaml
 ```
@@ -91,5 +99,4 @@ The boilerplate for certificates are located in cert-manager/certificates please
 
 # Author
 name: techchad2022
-
 email: techchad2022@gmail.com
