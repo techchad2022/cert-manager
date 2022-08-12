@@ -2,16 +2,18 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: traefik-ingress
+  name: traefik-dashboard
   namespace: kube-system
   annotations:
         kubernetes.io/ingress.class: traefik-external
 spec:
   entryPoints:
     - websecure
+  tls:
+    secretName: local-techchad2022-rocks-production
   routes:
     - kind: Rule
-      match: Host(`traefik.techchad2022.rocks`)
+      match: Host(`traefik.example.com`)
       middlewares:
       - name: traefik-dashboard-auth
         namespace: kube-system

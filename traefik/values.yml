@@ -254,6 +254,7 @@ additionalArguments:
  - "--providers.kubernetesingress.ingressclass=traefik-external"
  - "--log.level=DEBUG"
  - "--api.dashboard=true"
+
 # Environment variables to be passed to Traefik's binary
 env: []
 # - name: SOME_VAR
@@ -371,12 +372,7 @@ ports:
 #       - CurveP384
 tlsOptions: {}
 
-entryPoints:
-  websecure:
-    address: 443
-    http:
-      middlewares:
-        - traefik-dashboard-auth
+
 # Options for the main traefik service, where the entrypoints traffic comes
 # from.
 service:
@@ -487,9 +483,7 @@ serviceAccount:
   # If not set, a service account is created automatically using the fullname template
   name: ""
 
-api:
-  dashboard: true
-  insecure: true
+
 # Additional serviceAccount annotations (e.g. for oidc authentication)
 serviceAccountAnnotations: {}
 
