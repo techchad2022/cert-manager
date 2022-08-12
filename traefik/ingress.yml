@@ -1,4 +1,5 @@
 # https://kubernetes.io/docs/concepts/services-networking/ingress/#tls
+# This is an example of ingress route please change the sub-domain as per requirements. 
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:

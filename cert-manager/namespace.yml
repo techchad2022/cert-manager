@@ -1,3 +1,4 @@
+# This is the namespace in which the cert-manager is going to be installed.
 apiVersion: v1
 kind: Namespace
 metadata:

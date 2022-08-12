@@ -1,8 +1,11 @@
+# This is a certificate for staging environment and only accessable by default namespace.
+# Please update dnsNames as per requirements.
+
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: local-techchad2022-rocks
-  namespace: kube-system
+  namespace: default
 spec:
   secretName: local-techchad2022-rocks-staging
   issuerRef:
